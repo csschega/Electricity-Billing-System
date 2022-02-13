@@ -51,11 +51,11 @@ body {
       String email = request.getParameter("email");
       String pnumber = request.getParameter("pnumber");
       String address = request.getParameter("address");
-      String password = request.getParameter("password");
+     
      
       Class.forName("com.mysql.jdbc.Driver");
                                  con = DriverManager.getConnection("jdbc:mysql://localhost/billing_system","root","");
-      String query = "update customer set fname = ?, email= ?, 	pnumber =? ,address= ?,password= ? where uname = ?";
+      String query = "update customer set fname= ?, email= ?, 	pnumber =? ,address= ? where uname = ?";
      
       PreparedStatement pst = con.prepareStatement(query);
       
@@ -64,8 +64,7 @@ body {
       pst.setString(2, email);
       pst.setString(3, pnumber);
       pst.setString(4, address);
-      pst.setString(5, password);
-      pst.setString(6, uname);
+      pst.setString(5, uname);
       
       pst.executeUpdate();
      
@@ -89,7 +88,7 @@ body {
 </div>
         
         <form id="form" method="post" action="editCustomer.jsp" class="form-horizontal">
-            
+            <!<!-- to get the table values -->  
              <%
                           
                             PreparedStatement pst;
@@ -100,7 +99,7 @@ body {
                             
                            String id = request.getParameter("id");
                           
-                            pst = con.prepareStatement("select * from customer where uname = ?");
+                            pst = con.prepareStatement("SELECT fname,uname,email,pnumber,address  FROM  customer where uname = ?");
                             pst.setString(1, id);
                             rs = pst.executeQuery();
                             
@@ -155,13 +154,6 @@ body {
                             </div>
 </div>
             
-<div class="form-group">
-                            <div  class="col-sm-4"></div>
-                            <div  class="col-sm-4 mx-auto">
-                                    <label>Password</label>
-                                    <input type="password" name="password" class="form-control" id="password" value="<%= rs.getString("password")%>">
-                            </div>
-</div>
                                                    
             <br/>
             
@@ -169,7 +161,7 @@ body {
             
                 <div class="col-sm-6">
                     <div class="col-sm-2">
-                        <Button class="btn btn-success" style="width: 80px;">Submit</Button>
+                        <Button class="btn btn-success" style="width: 90px;">Confirm</Button>
                     </div>
                     <div class="col-sm-4">
                     </div>
@@ -179,8 +171,8 @@ body {
             
              <% } %>
         </form>
-        <div class="col-sm-12"  align="right">
-            <a href="index.jsp"><Button class="btn btn-success" style="width: 80px;">Home</Button></a>
+        <div class="form-group"  align="right">
+            <a href="viewCustomer.jsp"><Button class="btn btn-success" style="width: 90px;">Back</Button></a>
         </div>
     </body>
 </html>

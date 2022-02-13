@@ -51,31 +51,32 @@ body {
       String email = request.getParameter("email");
       String pnumber = request.getParameter("pnumber");
       String address = request.getParameter("address");
-     
+      String password = request.getParameter("password");
      
       Class.forName("com.mysql.jdbc.Driver");
                                  con = DriverManager.getConnection("jdbc:mysql://localhost/billing_system","root","");
-      String query = "update customer set fname= ?, email= ?, 	pnumber =? ,address= ? where uname = ?";
+      String query = "update customer set fname = ?, uname= ?, 	pnumber =? ,address= ?,password= ? where email = ?";
      
       PreparedStatement pst = con.prepareStatement(query);
       
       
        pst.setString(1, fname);
-      pst.setString(2, email);
+      pst.setString(2, uname);
       pst.setString(3, pnumber);
       pst.setString(4, address);
-      pst.setString(5, uname);
+      pst.setString(5, password);
+      pst.setString(6, email);
       
       pst.executeUpdate();
      
       color = "blue";
-      msg = "Customer Updated Succesfully";
+      msg = "Your Information  Updated Succesfully";
      
      
    }catch(Exception ex){
    ex.printStackTrace();
    color = "red";
-   msg = "Error Occured";
+   //msg = "Error Occured";
    }
    }
     %>    
@@ -87,7 +88,7 @@ body {
 <h4 style="color:<%= color %>"><%= msg %></h4>
 </div>
         
-        <form id="form" method="post" action="editCustomer.jsp" class="form-horizontal">
+        <form id="form" method="post" action="editinfo.jsp" class="form-horizontal">
             <!<!-- to get the table values -->  
              <%
                           
@@ -97,9 +98,9 @@ body {
                             Class.forName("com.mysql.jdbc.Driver");
                             con = DriverManager.getConnection("jdbc:mysql://localhost/billing_system","root","");
                             
-                           String id = request.getParameter("id");
+                           String id = request.getParameter("email");
                           
-                            pst = con.prepareStatement("SELECT fname,uname,email,pnumber,address  FROM  customer where uname = ?");
+                            pst = con.prepareStatement("select * from customer where email = ?");
                             pst.setString(1, id);
                             rs = pst.executeQuery();
                             
@@ -154,6 +155,13 @@ body {
                             </div>
 </div>
             
+<div class="form-group">
+                            <div  class="col-sm-4"></div>
+                            <div  class="col-sm-4 mx-auto">
+                                    <label>Password</label>
+                                    <input type="password" name="password" class="form-control" id="password" value="<%= rs.getString("password")%>">
+                            </div>
+</div>
                                                    
             <br/>
             
@@ -172,7 +180,7 @@ body {
              <% } %>
         </form>
         <div class="form-group"  align="right">
-            <a href="viewCustomer.jsp"><Button class="btn btn-success" style="width: 90px;">Back</Button></a>
+            <a href="user.jsp"><Button class="btn btn-success" style="width: 90px;">Back</Button></a>
         </div>
     </body>
 </html>

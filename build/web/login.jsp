@@ -1,10 +1,8 @@
 <%-- 
-    Document   : index
-    Created on : Feb 1, 2022, 1:44:57 AM
+    Document   : login
+    Created on : Feb 8, 2022, 10:25:16 AM
     Author     : CSS Chega
 --%>
-
-
 <html> 
     <head>    
         <title>Login PAGE</title>
@@ -19,9 +17,10 @@ body {
   background-size: cover;
   background-image: url("lamp.jpg.jpg");    
 }
-    </style>
+</style>
 
-     <body>      
+<body>
+        <form action="Loginchecker" method="post">
 
                 <fieldset style="width: 400px; margin:0 auto; padding: 20px; margin-top: 50px; border-bottom-color:red; ">
                     <p id="msg">
@@ -30,11 +29,17 @@ body {
                 </p>	
                 <div class="form-group">
                     <label for="name" class="col-sm-3 control-label">User Name</label>
-                    
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" id="name" name="name"
+                               placeholder="Enter your user name" />
+                    </div>
                 </div>
                 <div class="form-group">
                     <label for="pass" class="col-sm-3 control-label">Password</label>
-               
+                    <div class="col-sm-6">
+                        <input type="password" id="senha" class="form-control" name="pass"
+                               placeholder="Enter your password" />
+                    </div>
                 </div>
                 <div class="form-group">
                     <div class="col-sm-offset-3 col-sm-10">
@@ -42,7 +47,9 @@ body {
                     </div>
                 </div>
                 </fieldset>
-                    	                
+<!--                                 style="width: 400px; margin:0 auto; padding: 20px; margin-top: 50px;"-->
+                    </form>	
+                    
                 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
                     <script src="./bootstrap/js/jquery.js"></script>
                     <script src="./bootstrap/js/bootstrap.min.js"></script>
