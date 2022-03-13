@@ -19,7 +19,7 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: url("lamp.jpg.jpg");    
+  background-image: url("electricity-billing.webp");    
 }
 </style>
 </head>
@@ -28,8 +28,7 @@ body {
 <body style="padding:30px" >
         
         <div>
-<a href="homee.jsp"  class="btn btn-success">Home Page</a>
-<a href="login.jsp"  class="btn btn-primary">Login Page</a>
+<a href="login.jsp"  class="btn btn-success">Login</a>
 
 </div>
 </body>

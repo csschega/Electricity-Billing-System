@@ -16,9 +16,7 @@ public class NewClass {
         public static boolean validate(String email) {
         boolean status = false;
         try {
-//            Class.forName("oracle.jdbc.driver.OracleDriver");
-//            Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "java2021", "1616");
-            //CallableStatement callobj=con.prepareCall("{call SsELECTUSe(?)}");
+           
             DBConnection dbcon = new DBConnection();
             Connection con = dbcon.connMethod();
             PreparedStatement ps = con.prepareStatement("select * from customer where email=?");

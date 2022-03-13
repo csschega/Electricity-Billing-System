@@ -37,7 +37,7 @@ public class check extends HttpServlet {
             proximaPage = "/user.jsp";
        } 
        RequestDispatcher rd = request.getRequestDispatcher(proximaPage);
-        rd.forward(request, response);
+       rd.forward(request, response);
         
     }
 

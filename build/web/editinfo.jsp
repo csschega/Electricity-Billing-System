@@ -28,7 +28,7 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: url("lamp.jpg.jpg");    
+  background-image: url("electricity-billing.webp");    
 }
 </style>
         
@@ -111,7 +111,7 @@ body {
         
             <div class="form-group">
                 <div  class="col-sm-4"></div>
-                <div  class="col-sm-4">
+                <div  class="col-sm-4" style="color:cyan">
                     <h2 style="text-align: center">Customer Details</h2>
                 </div>
             </div>
@@ -119,7 +119,7 @@ body {
                         <div class="form-group">
                  <div  class="col-sm-4"></div>
                   <div  class="col-sm-4 mx-auto">
-                   <label >Full Name</label>
+                   <label style="color:cyan">Full Name</label>
    <input type="text" name="fname" class="form-control" id="fname" value="<%= rs.getString("fname")%>">
                   </div>
 </div>
@@ -127,7 +127,7 @@ body {
             <div class="form-group">
                  <div  class="col-sm-4"></div>
                   <div  class="col-sm-4 mx-auto">
-                   <label>User Name</label>
+                   <label style="color:cyan">User Name</label>
                    <input type="text" name="uname" class="form-control" id="uname" value="<%= rs.getString("uname")%>">
                   </div>
 </div>
@@ -135,14 +135,14 @@ body {
 <div class="form-group">
                  <div  class="col-sm-4"></div>
                   <div  class="col-sm-4 mx-auto">
-                   <label>Email</label>
+                   <label style="color:cyan">Email</label>
                    <input type="email" name="email" class="form-control" id="email" value="<%= rs.getString("email")%>">
                   </div>
 </div>
           <div class="form-group">
                             <div  class="col-sm-4"></div>
                             <div  class="col-sm-4 mx-auto">
-                                        <label>Phone Number</label>
+                                        <label style="color:cyan">Phone Number</label>
                                         <input type="number" name="pnumber" class="form-control" id="pnumber" value="<%= rs.getString("pnumber")%>">
                             </div>
 </div>     
@@ -150,7 +150,7 @@ body {
 <div class="form-group">
                             <div  class="col-sm-4"></div>
                             <div  class="col-sm-4 mx-auto">
-                                        <label>Address:</label>
+                                        <label style="color:cyan">Address:</label>
                                          <input type="text" name="address" class="form-control" id="address" value="<%= rs.getString("address")%>">
                             </div>
 </div>
@@ -158,14 +158,14 @@ body {
 <div class="form-group">
                             <div  class="col-sm-4"></div>
                             <div  class="col-sm-4 mx-auto">
-                                    <label>Password</label>
+                                    <label style="color:cyan">Password</label>
                                     <input type="password" name="password" class="form-control" id="password" value="<%= rs.getString("password")%>">
                             </div>
 </div>
                                                    
             <br/>
             
-            <div class="form-group" align="right">
+            <div class="form-group" align="center">
             
                 <div class="col-sm-6">
                     <div class="col-sm-2">
@@ -179,7 +179,7 @@ body {
             
              <% } %>
         </form>
-        <div class="form-group"  align="right">
+        <div class="form-group"  align="center">
             <a href="user.jsp"><Button class="btn btn-success" style="width: 90px;">Back</Button></a>
         </div>
     </body>

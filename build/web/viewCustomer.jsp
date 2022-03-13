@@ -26,7 +26,7 @@
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
-            background-image: url("lamp.jpg.jpg");
+            background-image: url("electricity-billing.webp");
         }
     </style>
 
@@ -34,21 +34,21 @@
 
         <div class="form-group">
             <div  class="col-sm-4"></div>
-            <div  class="col-sm-4">
+            <div  class="col-sm-4" style="color:cyan">
                 <h2 style="text-align: center">Customer Details</h2>
             </div>
         </div>
         <div class="col-sm-2">
-            <a href="index.jsp"><Button class="btn btn-success" style="width: 80px;">Main</Button></a>
+            <a href="admin.jsp"><Button class="btn btn-success" style="width: 80px;">Home</Button></a>
         </div>
         <table class="table table-hover">
             <thead>
                 <tr>
-                    <th scope="col">Full_Name</th>
-                    <th scope="col">Username</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Phone_Number</th>
-                    <th scope="col">Address</th>
+                    <th scope="col" style="color:cyan">Full_Name</th>
+                    <th scope="col" style="color:cyan">Username</th>
+                    <th scope="col" style="color:cyan">Email</th>
+                    <th scope="col" style="color:cyan">Phone_Number</th>
+                    <th scope="col" style="color:cyan">Address</th>
 
                 </tr>
             </thead>
@@ -66,14 +66,13 @@
                     while (rs.next()) {
                 %>
                 <tr>
-                    <th scope="row"><%= rs.getString("fname")%></th>
-                    <td><%=rs.getString("uname")%></td>
-                    <td><%=rs.getString("email")%></td>
-                    <td><%=rs.getString("pnumber")%></td>
-                    <td><%=rs.getString("address")%></td>
-
+                    <th style="color:cyan" scope="row"><%= rs.getString("fname")%></th>
+                    <th style="color:cyan" scope="row"><%= rs.getString("uname")%></th>
+                    <th style="color:cyan" scope="row"><%= rs.getString("email")%></th>
+                    <th style="color:cyan" scope="row"><%= rs.getString("pnumber")%></th>
+                    <th style="color:cyan" scope="row"><%= rs.getString("address")%></th>
                     <td>
-                        <a class="btn btn-success" href="editCustomer.jsp?id=<%=rs.getString("uname")%>" role="button">Edit</a>
+                        <a class="btn btn-primary" href="editCustomer.jsp?id=<%=rs.getString("uname")%>" role="button" >Edit</a>
                         <a class="btn btn-danger" href="removeCustomer.jsp?id=<%=rs.getString("uname")%>" role="button"onclick="return confirm('Are you sure you want to delete?')">Remove</a>
                     </td>
                 </tr>

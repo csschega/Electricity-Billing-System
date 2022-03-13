@@ -4,7 +4,6 @@
     Author     : CSS Chega
 --%>
 
-
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@page import="java.sql.Connection" %>
 <%@page import="java.sql.DriverManager" %>
@@ -39,16 +38,18 @@
             </div>
         </div>
         <div class="col-sm-2">
-            <a href="admin.jsp"><Button class="btn btn-success" style="width: 80px;">Home</Button></a>
+            <a href="user.jsp"><Button class="btn btn-success" style="width: 80px;">Home</Button></a>
         </div>
         <table class="table table-hover">
             <thead>
                 <tr>
-                    <th scope="col" style="color:cyan">Full_Name</th>
-                    <th scope="col" style="color:cyan">Username</th>
-                    <th scope="col" style="color:cyan">Email</th>
-                    <th scope="col" style="color:cyan">Phone_Number</th>
-                    <th scope="col" style="color:cyan">Address</th>
+                      <th scope="col" style="color:cyan">Username</th>
+                    <th scope="col" style="color:cyan">Current_Meter</th>
+                    <th scope="col" style="color:cyan">Previous_Meter</th>
+                    <th scope="col" style="color:cyan">Month</th>
+                    <th scope="col" style="color:cyan">Cost</th>
+                    <th scope="col" style="color:cyan">Bill_no</th>
+                    <th scope="col" style="color:cyan">Status</th>
 
                 </tr>
             </thead>
@@ -58,22 +59,25 @@
                     Connection con;
                     PreparedStatement pst;
                     ResultSet rs;
+                    String id=request.getParameter("billno");
                     Class.forName("com.mysql.jdbc.Driver");
                     con = DriverManager.getConnection("jdbc:mysql://localhost/billing_system", "root", "");
-                    String query = "SELECT fname,uname,email,pnumber,address  FROM  customer";
+                    String query = "SELECT *  FROM  e_bill where billno='"+id+"'";
                     pst = con.prepareStatement(query);
                     rs = pst.executeQuery();
                     while (rs.next()) {
                 %>
                 <tr>
-                    <th style="color:cyan" scope="row"><%= rs.getString("fname")%></th>
                     <th style="color:cyan" scope="row"><%= rs.getString("uname")%></th>
-                    <th style="color:cyan" scope="row"><%= rs.getString("email")%></th>
-                    <th style="color:cyan" scope="row"><%= rs.getString("pnumber")%></th>
-                    <th style="color:cyan" scope="row"><%= rs.getString("address")%></th>
+                    <th style="color:cyan" scope="row"><%= rs.getString("c_metter")%></th>
+                   <th style="color:cyan" scope="row"><%= rs.getString("p_metter")%></th>
+                    <th style="color:cyan" scope="row"><%= rs.getString("month")%></th>
+                    <th style="color:cyan" scope="row"><%= rs.getString("cost")%></th>
+                    <th style="color:cyan" scope="row"><%= rs.getString("billno")%></th>
+                    <th style="color:cyan" scope="row"><%= rs.getString("status")%></th>
+
                     <td>
-                        <a class="btn btn-primary" href="editCustomer.jsp?id=<%=rs.getString("uname")%>" role="button" >Edit</a>
-                        <a class="btn btn-danger" href="removeCustomer.jsp?id=<%=rs.getString("uname")%>" role="button"onclick="return confirm('Are you sure you want to delete?')">Remove</a>
+                        <a class="btn btn-success" href="makepayment.jsp?id=<%=rs.getString("billno")%>" role="button">Make_payment</a>
                     </td>
                 </tr>
                 <% }%>

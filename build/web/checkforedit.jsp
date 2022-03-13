@@ -4,10 +4,6 @@
     Author     : CSS Chega
 --%>
 
-<%@page import="java.sql.Connection"%>
-<%@page import="java.sql.DriverManager"%>
-<%@page import="java.sql.ResultSet"%>
-<%@page import="java.sql.PreparedStatement"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -22,7 +18,7 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: url("lamp.jpg.jpg");    
+  background-image: url("electricity-billing.webp");    
 }
 </style>
     <body>
@@ -32,7 +28,7 @@ body {
         
             <div class="form-group">
                 <div  class="col-sm-4"></div>
-                <div  class="col-sm-4">
+                <div  class="col-sm-4" style="color:cyan">
                     <h2 style="text-align: center">User Checking</h2>
                 </div>
             </div>
@@ -41,13 +37,13 @@ body {
 <div class="form-group">
                  <div  class="col-sm-4"></div>
                   <div  class="col-sm-4 mx-auto">
-                   <label>Email</label>
+                   <label style="color:cyan">Email</label>
                    <input type="email" name="email" class="form-control" id="email" placeholder="Enter your Email">
                   </div>
 </div>
     
             
-            <div class="form-group" align="right">
+            <div class="form-group" align="center">
             
                 <div class="col-sm-6">
                     <div class="col-sm-2">
@@ -59,7 +55,7 @@ body {
                 </div>
             </div>  
         </form>
-        <div class="form-group"  align="right">
+        <div class="form-group"  align="center">
             <a href="user.jsp"><Button class="btn btn-success" style="width: 90px;">Back</Button></a>
         </div>
     </body>

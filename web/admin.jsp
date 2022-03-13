@@ -19,7 +19,7 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: url("lamp.jpg.jpg");    
+  background-image: url("electricity-billing.webp");    
 }
 </style>
 </head>
@@ -29,8 +29,10 @@ body {
         
         <div>
 <a href="addCustomer.jsp"  class="btn btn-success">Add Customer</a>
-<a href="viewCustomer.jsp" class="btn btn-warning">View Customer</a>
-<a href="preparebill.jsp" class="btn btn-warning">Prepare Bill</a>
+<a href="viewCustomer.jsp" class="btn btn-success">View Customer</a>
+<a href="preparebill.jsp" class="btn btn-success">Prepare Bill</a>
+<a href="billinfo.jsp" class="btn btn-success">Bill_info</a>
+<a href="index.jsp" class="btn btn-primary">Logout</a>
 </div>
 </body>
 </html>

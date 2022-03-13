@@ -29,11 +29,11 @@ body {
                     <%= msg != null ? msg : ""%><br>
                 </p>	
                 <div class="form-group">
-                    <label for="name" class="col-sm-3 control-label">User Name</label>
-                    
+                    <label for="name" class="col-sm-3 control-label" style="color:cyan">User Name</label>
+                    <input type="text" name="name" style="color:red" />
                 </div>
                 <div class="form-group">
-                    <label for="pass" class="col-sm-3 control-label">Password</label>
+                    <label for="pass" class="col-sm-3 control-label" style="color:cyan">Password</label>
                
                 </div>
                 <div class="form-group">

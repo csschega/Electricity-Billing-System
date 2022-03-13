@@ -8,22 +8,37 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
    <head>
       <meta charset="utf-8">
       <title>Error Page</title>
-      <link rel="stylesheet" href="bootstrap/css/style.css">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    
+<style>
+body {  
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("electricity-billing.webp");    
+}
+</style>
    </head>
    <body>
       <div id="error-page">
-         <div class="content">
-            <h2 class="header" data-text="ERROR">
+         <div class="content" style="color:red">
+            <h1 class="header" data-text="ERROR">
                ERROR
-            </h2>
-            <h3 data-text="Opps! Incorrect Input or  Page not found">
+            </h1>
+             <h2 data-text="Opps! Incorrect Input or  Page not found" style="color:cyan">
                 Sorry, the user name or the password you insert is incorrect!!.
-            </h3>
+            </h2>
 
+             <h2 data-text="Opps! Incorrect Input or  Page not found" style="color:cyan">
+                Or Maybe You Are Not Registered!!
+            </h2>
+             
             <div class="form-group"  align="center">
-            <a href="login.jsp"><Button class="btn btn-success" style="width: 90px;">Login</Button></a>
+            <a href="login.jsp"><Button class="btn btn-success" style="width: 90px;">Login</Button></a>            
         </div>
          </div>
       </div>
    </body>
 </html>
+
+

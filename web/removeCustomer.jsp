@@ -13,7 +13,7 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: url("lamp.jpg.jpg");    
+  background-image: url("electricity-billing.webp");    
 }
 </style>
 

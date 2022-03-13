@@ -1,6 +1,6 @@
 <%-- 
-    Document   : checkforedit
-    Created on : Feb 13, 2022, 2:33:18 AM
+    Document   : checkforpay
+    Created on : Feb 14, 2022, 10:38:46 AM
     Author     : CSS Chega
 --%>
 
@@ -22,14 +22,14 @@ body {
 }
 </style>
     <body>
-        <form id="form" method="post" action="check" class="form-horizontal">
+        <form id="form" method="post" action="paymenttbl.jsp" class="form-horizontal">
             <!<!-- to get the table values -->  
               
         
             <div class="form-group">
                 <div  class="col-sm-4"></div>
                 <div  class="col-sm-4" style="color:cyan">
-                    <h2 style="text-align: center">User Checking</h2>
+                    <h2 style="text-align: center">Payment Checking</h2>
                 </div>
             </div>
 
@@ -37,8 +37,8 @@ body {
 <div class="form-group">
                  <div  class="col-sm-4"></div>
                   <div  class="col-sm-4 mx-auto">
-                   <label style="color:cyan">Email</label>
-                   <input type="email" name="email" class="form-control" id="email" placeholder="Enter your Email">
+                   <label style="color:cyan">Bill Number</label>
+                   <input type="number" name="billno" class="form-control" id="billno" placeholder="Enter your Bill_no">
                   </div>
 </div>
     
@@ -60,3 +60,4 @@ body {
         </div>
     </body>
 </html>
+

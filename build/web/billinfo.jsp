@@ -35,7 +35,7 @@
         <div class="form-group">
             <div  class="col-sm-4"></div>
             <div  class="col-sm-4" style="color:cyan">
-                <h2 style="text-align: center">Customer Details</h2>
+                <h2 style="text-align: center">Bill Details</h2>
             </div>
         </div>
         <div class="col-sm-2">
@@ -44,11 +44,13 @@
         <table class="table table-hover">
             <thead>
                 <tr>
-                    <th scope="col" style="color:cyan">Full_Name</th>
                     <th scope="col" style="color:cyan">Username</th>
-                    <th scope="col" style="color:cyan">Email</th>
-                    <th scope="col" style="color:cyan">Phone_Number</th>
-                    <th scope="col" style="color:cyan">Address</th>
+                    <th scope="col" style="color:cyan">Current_Meter</th>
+                    <th scope="col" style="color:cyan">Previous_Meter</th>
+                    <th scope="col" style="color:cyan">Month</th>
+                    <th scope="col" style="color:cyan">Cost</th>
+                    <th scope="col" style="color:cyan">Bill_no</th>
+                    <th scope="col" style="color:cyan">Status</th>
 
                 </tr>
             </thead>
@@ -60,21 +62,20 @@
                     ResultSet rs;
                     Class.forName("com.mysql.jdbc.Driver");
                     con = DriverManager.getConnection("jdbc:mysql://localhost/billing_system", "root", "");
-                    String query = "SELECT fname,uname,email,pnumber,address  FROM  customer";
+                    String query = "SELECT *FROM  e_bill";
                     pst = con.prepareStatement(query);
                     rs = pst.executeQuery();
                     while (rs.next()) {
                 %>
                 <tr>
-                    <th style="color:cyan" scope="row"><%= rs.getString("fname")%></th>
-                    <th style="color:cyan" scope="row"><%= rs.getString("uname")%></th>
-                    <th style="color:cyan" scope="row"><%= rs.getString("email")%></th>
-                    <th style="color:cyan" scope="row"><%= rs.getString("pnumber")%></th>
-                    <th style="color:cyan" scope="row"><%= rs.getString("address")%></th>
-                    <td>
-                        <a class="btn btn-primary" href="editCustomer.jsp?id=<%=rs.getString("uname")%>" role="button" >Edit</a>
-                        <a class="btn btn-danger" href="removeCustomer.jsp?id=<%=rs.getString("uname")%>" role="button"onclick="return confirm('Are you sure you want to delete?')">Remove</a>
-                    </td>
+                    <th style="color:cyan" scope="row"><%= rs.getString("uname")%></th>-
+                    <th style="color:cyan" scope="row"><%= rs.getString("c_metter")%></th>
+                   <th style="color:cyan" scope="row"><%= rs.getString("p_metter")%></th>
+                    <th style="color:cyan" scope="row"><%= rs.getString("month")%></th>
+                    <th style="color:cyan" scope="row"><%= rs.getString("cost")%></th>
+                    <th style="color:cyan" scope="row"><%= rs.getString("billno")%></th>
+                    <th style="color:cyan" scope="row"><%= rs.getString("status")%></th>
+
                 </tr>
                 <% }%>
             </tbody>

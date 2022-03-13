@@ -15,7 +15,7 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: url("lamp.jpg.jpg");    
+  background-image: url("electricity-billing.webp");    
 }
 </style>
 
@@ -28,14 +28,14 @@ body {
                     <%= msg != null ? msg : ""%><br>
                 </p>	
                 <div class="form-group">
-                    <label for="name" class="col-sm-3 control-label">User Name</label>
+                    <label for="name" class="col-sm-3 control-label" style="color:cyan">User Name</label>
                     <div class="col-sm-8">
                         <input type="text" class="form-control" id="name" name="name"
                                placeholder="Enter your user name" />
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="pass" class="col-sm-3 control-label">Password</label>
+                    <label for="pass" class="col-sm-3 control-label" style="color:cyan">Password</label>
                     <div class="col-sm-6">
                         <input type="password" id="senha" class="form-control" name="pass"
                                placeholder="Enter your password" />
